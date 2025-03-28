@@ -1,6 +1,6 @@
 # LIBPNGPS2
 
-Es una librería para ps2sdk que te permite cargar imagenes png y renderizarlas de una forma sencilla usando el decodificar upng(Específicamente solo sirve para cargar imagenes png que esten en un buffer, se puede crear un archivo .c que almacene datos de una imagen usando [bin2c](https://github.com/gwilymk/bin2c.git))
+Esta es una librería que cree para ps2sdk que te permite cargar imagenes png y renderizarlas de una forma sencilla usando el decodificar upng(Específicamente solo sirve para cargar imagenes png que esten en un buffer, se puede crear un archivo .c que almacene datos de una imagen usando [bin2c](https://github.com/gwilymk/bin2c.git))
 
 ## Ejemplo de código
 
