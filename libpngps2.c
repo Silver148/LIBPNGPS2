@@ -53,3 +53,9 @@ void FreeMemory(GSGLOBAL *gsGlobal, GSTEXTURE *texture) {
     texture->Mem = NULL;
     gsKit_vram_clear(gsGlobal);
 }
+
+void print_vram_usage(GSGLOBAL *gsGlobal) {
+    int vram_used = gsGlobal->CurrentPointer;
+    double vram_used_mb = vram_used / 1048576.0; // Convert to megabytes
+    printf("VRAM used: %d bytes (%.2f MB)\n", vram_used, vram_used_mb);
+}
