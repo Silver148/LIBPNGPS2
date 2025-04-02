@@ -15,6 +15,7 @@ int main()
 
     init_graphics(&gsGlobal, 320, 240); //La resolución de 320 x 240 es un ejemplo, pruebe con que resolución se rendereriza de forma correcta la imagen
     load_texture(&gsGlobal, &texture, datos, size_datos, GS_PSM_CT32); //El PSM puede variar dependiendo de la imagen, tienes que probar con que PSM se renderiza correctamente, este puede ser GS_PSM_CT16, GS_PSM_CT24 o GS_PSM_CT32
+    print_vram_usage(gsGlobal); //Función para poder ver el consumo de VRAM
     while(1)
     {
     render_texture(gsGlobal, &texture, 0, 0);
