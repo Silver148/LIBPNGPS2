@@ -34,6 +34,10 @@ FreeMemory(gsGlobal, &texture); //Puse como ejemplo "texture"
 
 Recomiendo usar imagenes muy livianas y usar la resolución de 320 x 240(Es solo una recomendación)
 
+## NOTA
+
+El archivo cabecera de LIBPNGPS2 ya include los archivos cabecera gsKit.h, dmaKit.h y gsToolkit.h, asi que si incluyes libpngps2.h en tu código, ya no se necesita importar manualmente los archivos cabecera de gsKit, ya que al solo incluir libpngps2.h ya se importan :D
+
 ## Ejemplo de como incluir LIBPNGPS2 en un archivo Makefile
 
 ```make
