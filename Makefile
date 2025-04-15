@@ -8,12 +8,6 @@ all: $(EE_OBJS)
 clean:
 	rm -f $(EE_BIN) $(EE_OBJS) $(LIB_NAME)
 
-run: $(EE_BIN)
-	ps2client execee host:$(EE_BIN)
-
-reset:
-	ps2client reset
-
 lib:
 	ar rcs $(LIB_NAME) $(EE_OBJS)
 
