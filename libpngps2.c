@@ -10,7 +10,7 @@ void init_graphics(GSGLOBAL **gsGlobal, int width, int height) {
     (*gsGlobal)->ZBuffering = GS_SETTING_ON;
 
     gsKit_init_screen(*gsGlobal);
-    gsKit_mode_switch(*gsGlobal, GS_ONESHOT);
+    gsKit_mode_switch(*gsGlobal, GS_PERSISTENT);
 
     dmaKit_init(D_CTRL_RELE_OFF, D_CTRL_MFD_OFF, D_CTRL_STS_UNSPEC, D_CTRL_STD_OFF, D_CTRL_RCYC_8, 1 << DMA_CHANNEL_GIF);
     dmaKit_chan_init(DMA_CHANNEL_FROMSPR);
