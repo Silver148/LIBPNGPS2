@@ -19,6 +19,8 @@ int main()
     while(1)
     {
     render_texture(gsGlobal, &texture, 0, 0);
+    gsKit_queue_exec(gsGlobal);
+    gsKit_sync_flip(gsGlobal);
     }
 
     return 0;
