@@ -43,8 +43,6 @@ void render_texture(GSGLOBAL *gsGlobal, GSTEXTURE *texture, int x, int y) {
 
     gsKit_clear(gsGlobal, GS_SETREG_RGBAQ(0x00, 0x00, 0x00, 0x80, 0x00));
     gsKit_prim_sprite_texture(gsGlobal, texture, x, y, 0.0f, 0.0f, texture->Width + x, texture->Height + y, texture->Width, texture->Height, 2, GS_SETREG_RGBAQ(0x80, 0x80, 0x80, 0x80, 0x00));
-    gsKit_queue_exec(gsGlobal);
-    gsKit_sync_flip(gsGlobal);
 
 }
 
