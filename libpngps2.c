@@ -39,8 +39,8 @@ void load_texture(GSGLOBAL **gsGlobal, GSTEXTURE *texture, const unsigned char *
     }
 }
 
-void create_texture(GSGLOBAL *gsGlobal, GSTEXTURE *texture, int x, int y, int opacity) {
-    gsKit_prim_sprite_texture(gsGlobal, texture, x, y, 0.0f, 0.0f, texture->Width + x, texture->Height + y, texture->Width, texture->Height, 2, GS_SETREG_RGBAQ(0x80, 0x80, 0x80, opacity, 0x00));
+void create_texture(GSGLOBAL *gsGlobal, GSTEXTURE *texture, int x, int y) {
+    gsKit_prim_sprite_texture(gsGlobal, texture, x, y, 0.0f, 0.0f, texture->Width + x, texture->Height + y, texture->Width, texture->Height, 2, GS_SETREG_RGBAQ(0x80, 0x80, 0x80, 0x80, 0x00));
 }
 
 void FreeMemory(GSGLOBAL *gsGlobal, GSTEXTURE *texture) {
