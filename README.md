@@ -18,7 +18,7 @@ int main()
     print_vram_usage(gsGlobal); //Función para poder ver el consumo de VRAM
     while(1)
     {
-    create_texture(gsGlobal, &texture, 0, 0);
+    create_texture(gsGlobal, &texture, 0, 0, 0x80);
     gsKit_queue_exec(gsGlobal);
     gsKit_sync_flip(gsGlobal);
     }
