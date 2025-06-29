@@ -40,13 +40,29 @@ void load_texture(GSGLOBAL **gsGlobal, GSTEXTURE *texture, const unsigned char *
 }
 
 void create_texture(GSGLOBAL *gsGlobal, GSTEXTURE *texture, int x, int y) {
-    gsKit_prim_sprite_texture(gsGlobal, texture, x, y, 0.0f, 0.0f, texture->Width + x, texture->Height + y, texture->Width, texture->Height, 0, GS_SETREG_RGBAQ(0x80, 0x80, 0x80, 0x80, 0x00));
+    u64 sprite_vertex_color = GS_SETREG_RGBAQ(0x80, 0x80, 0x80, 0x80, 0x00);
+
+    gsKit_prim_sprite_texture(
+        gsGlobal,
+        texture,
+        (float)x,
+        (float)y,
+        0.0f,
+        0.0f,
+        (float)x + texture->Width,
+        (float)y + texture->Height,
+        (float)texture->Width,
+        (float)texture->Height,
+        0.0f,
+        sprite_vertex_color
+    );
 }
 
 void FreeMemory(GSGLOBAL *gsGlobal, GSTEXTURE *texture) {
     free(texture->Mem);
     texture->Mem = NULL;
-    gsKit_vram_clear(gsGlobal);
+    gsKit_TexManager_free(gsGlobal, texture);
+    texture->Vram = 0;
 }
 
 void print_vram_usage(GSGLOBAL *gsGlobal) {

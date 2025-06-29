@@ -6,6 +6,8 @@
 #include <gsKit.h>
 #include <dmaKit.h>
 #include <gsToolkit.h>
+#include <gsTexture.h>
+
 #include <stdio.h>
 #include "upng/upng.h"
 
