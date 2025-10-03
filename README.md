@@ -13,12 +13,12 @@ int main()
     GSGLOBAL *gsGlobal;
     GSTEXTURE texture;
 
-    init_graphics(&gsGlobal, 320, 240); //La resolución de 320 x 240 es un ejemplo, pruebe con que resolución se rendereriza de forma correcta la imagen
-    load_texture(&gsGlobal, &texture, datos, size_datos, GS_PSM_CT32); //El PSM puede variar dependiendo de la imagen, tienes que probar con que PSM se renderiza correctamente, este puede ser GS_PSM_CT16, GS_PSM_CT24 o GS_PSM_CT32
+    init_graphics(gsGlobal, 320, 240); //La resolución de 320 x 240 es un ejemplo, pruebe con que resolución se rendereriza de forma correcta la imagen
+    load_texture_from_buffer(gsGlobal, &texture, datos, size_datos, GS_PSM_CT32); //El PSM puede variar dependiendo de la imagen, tienes que probar con que PSM se renderiza correctamente, este puede ser GS_PSM_CT16, GS_PSM_CT24 o GS_PSM_CT32
     print_vram_usage(gsGlobal); //Función para poder ver el consumo de VRAM
     while(1)
     {
-    create_texture(gsGlobal, &texture, 0, 0);
+    draw_texture(gsGlobal, &texture, 0, 0);
     gsKit_queue_exec(gsGlobal);
     gsKit_sync_flip(gsGlobal);
     }
@@ -31,7 +31,7 @@ int main()
 
 ```c
 
-FreeMemory(gsGlobal, &texture); //Puse como ejemplo "texture"
+FreeTexture(gsGlobal, &texture); //Puse como ejemplo "texture"
 ```
 
 Recomiendo usar imagenes muy livianas y usar la resolución de 320 x 240(Es solo una recomendación)
@@ -68,10 +68,6 @@ Al incluir LIBPNGPS2 en tu Makefile, tienes que incluir tambien la librería gsK
 
 ```
 make
-```
-
-```
-make lib
 ```
 
 ```
